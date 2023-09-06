@@ -19,12 +19,12 @@ func _process(delta):
 	
 	
 func _GameStart():
-	_GameLoad(Global._GenMap())
+	Global.map=Global._GenMap()
+	_GameLoad()
 	
 	
-func _GameLoad(map_data):
+func _GameLoad():
 	_UiRemove()
-	Global.map = map_data
 	_GameAdd()
 	Global.Gctrl = game
 

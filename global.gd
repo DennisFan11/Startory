@@ -1,13 +1,12 @@
 extends Node
-var log = ""
 var ctrl
 var Gctrl
-var map = []
+var map = {}
 
 var player_position = Vector2(0, 0)
 
-var block_size = 64
-var chunk_size = 32
+var block_size = 32
+var chunk_size = 6
 var chunk_array_load = empty_chunk_array(3) #9*9
 var chunk_array_loaded = []
 

@@ -58,9 +58,10 @@ func _add(cpos:Vector2):
 			var ix = bpos.x+x
 			var iy = bpos.y+y
 			var id = mapdata.floor[ix][iy]
-			mapdata.floor[ix][iy] = floor[id].instantiate()
-			add_child(mapdata.floor[ix][iy])
-			mapdata.floor[ix][iy].position=Vector2(ix*block_size,iy*block_size)
+			if typeof(id) ==TYPE_INT && id !=0 && ix>=0 &&iy>=0:
+				mapdata.floor[ix][iy] = floor[id].instantiate()
+				add_child(mapdata.floor[ix][iy])
+				mapdata.floor[ix][iy].position=Vector2(ix*block_size+block_size/2,iy*block_size+block_size/2)
 			
 		
 func _remove(cpos:Vector2):
@@ -70,8 +71,9 @@ func _remove(cpos:Vector2):
 			var ix = bpos.x+x
 			var iy = bpos.y+y
 			var id = mapdata.floor[ix][iy].id
-			mapdata.floor[ix][iy].queue_free()
-			mapdata.floor[ix][iy] = id
+			if typeof(id) ==TYPE_CALLABLE:
+				mapdata.floor[ix][iy].queue_free()
+				mapdata.floor[ix][iy] = id
 		
 	
 	

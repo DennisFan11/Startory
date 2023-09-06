@@ -24,9 +24,9 @@ func _GameStart():
 	
 func _GameLoad(map_data):
 	_UiRemove()
+	Global.map = map_data
 	_GameAdd()
-	Global.Gctrl=game
-	game.map._load(map_data)
+	Global.Gctrl = game
 
 
 

@@ -15,7 +15,7 @@ func _start():
 	Global.ctrl._GameStart()
 	
 func _load():
-	Global.ctrl._GameLoad()
+	pass
 	
 func _exit():
 	get_tree().quit()

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djdqs017n35t7"]
+
+[ext_resource type="Script" path="res://main_ctrl.gd" id="1_km8v4"]
+
+[node name="main_ctrl" type="Node"]
+script = ExtResource("1_km8v4")

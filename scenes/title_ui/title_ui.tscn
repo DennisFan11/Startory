@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw6sbchbjc4fl"]
+
+[ext_resource type="Script" path="res://scenes/title_ui/title_ui.gd" id="1_cguug"]
+
+[node name="title_ui" type="Node2D"]
+script = ExtResource("1_cguug")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "startory"
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="start" type="Button" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "start"
+
+[node name="load" type="Button" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "load"
+
+[node name="exit" type="Button" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "exit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="button_down" from="Control/HBoxContainer/VBoxContainer/start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="Control/HBoxContainer/VBoxContainer/load" to="." method="_on_load_button_down"]
+[connection signal="button_down" from="Control/HBoxContainer/VBoxContainer/exit" to="." method="_on_exit_button_down"]

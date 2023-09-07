@@ -2,13 +2,28 @@ extends Node
 var ctrl
 var Gctrl
 var map = {}
+var damp = 5 #每幀pix
 
-var player_position = Vector2(0, 0)
+
+var speed:float = 3 #每幀pix
+var max_speed:float = 50 
+var max_run_speed:float = 80
+var player_position:Vector2 = Vector2.ZERO
+var move_vector:Vector2 = Vector2.ZERO
+var running:bool = false
+var shooting:bool = false
+var aim:bool = false
+
+var hp:int = 10
+
 
 var block_size = 32
 var chunk_size = 6
 var chunk_array_load = empty_chunk_array(3) #9*9
 var chunk_array_loaded = []
+
+
+
 
 
 

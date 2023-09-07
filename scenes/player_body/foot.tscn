@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyibugd1tm4ah"]
+
+[ext_resource type="Script" path="res://scenes/player_body/foot.gd" id="1_uqyca"]
+[ext_resource type="PackedScene" uid="uid://cg6ufw1ffh6kv" path="res://scenes/player_body/blood_meat.tscn" id="2_pxnim"]
+
+[sub_resource type="Curve2D" id="Curve2D_prcrm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -10.0226, -5.23403, 10.0226, 5.23403, 15, 38, 0, 0, 0, 0, 29, 40)
+}
+point_count = 3
+
+[node name="foot" type="Path2D"]
+curve = SubResource("Curve2D_prcrm")
+script = ExtResource("1_uqyca")
+
+[node name="blood_meat" parent="." instance=ExtResource("2_pxnim")]
+show_behind_parent = true
+points = PackedVector2Array(0, 0, 0.233448, 1.41814, 0.93432, 5.20146, 1.46029, 7.75926, 2.10341, 10.6434, 2.86379, 13.7655, 3.74152, 17.0372, 4.7367, 20.3703, 5.84944, 23.6765, 7.07982, 26.8672, 8.42796, 29.8544, 9.89395, 32.5496, 11.4779, 34.8644, 15, 38, 18.4791, 39.5887, 21.4158, 40.5206, 25.7585, 40.9628, 29, 40)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd1hi2t7kxgp0"]
+
+[ext_resource type="Script" path="res://scenes/path_anime/path_anime.gd" id="1_xekbu"]
+
+[node name="path_anime" type="PathFollow2D"]
+script = ExtResource("1_xekbu")

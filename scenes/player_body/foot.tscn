@@ -1,18 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyibugd1tm4ah"]
+[gd_scene load_steps=5 format=3 uid="uid://cyibugd1tm4ah"]
 
 [ext_resource type="Script" path="res://scenes/player_body/foot.gd" id="1_uqyca"]
 [ext_resource type="PackedScene" uid="uid://cg6ufw1ffh6kv" path="res://scenes/player_body/blood_meat.tscn" id="2_pxnim"]
 
-[sub_resource type="Curve2D" id="Curve2D_prcrm"]
+[sub_resource type="Curve2D" id="Curve2D_jt0by"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -10.0226, -5.23403, 10.0226, 5.23403, 15, 38, 0, 0, 0, 0, 29, 40)
+"points": PackedVector2Array(-4.48485, -3.70376, 4.48485, 3.70376, 0, 0, -9.34922, -0.459517, 9.34922, 0.459517, 4.875, 25.4657, 4.36824, -13.1384, -4.36824, 13.1384, 19.5, 19.4738, -4.50355, -4.93291, 4.50355, 4.93291, 26, 31.4576)
 }
-point_count = 3
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ro34f"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.365979, 0.663158), 0.0, 0.0, 0, 0, Vector2(0.938144, 0.115789), 0.249037, 0.249037, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="foot" type="Path2D"]
-curve = SubResource("Curve2D_prcrm")
+scale = Vector2(0.615385, 0.667565)
+curve = SubResource("Curve2D_jt0by")
 script = ExtResource("1_uqyca")
+anime = true
+"擺幅" = 0.5
+"波長" = 10
+"波速" = 30
+"擺幅2" = 1.5
+"波長2" = 80
+"波速2" = 90
 
 [node name="blood_meat" parent="." instance=ExtResource("2_pxnim")]
 show_behind_parent = true
-points = PackedVector2Array(0, 0, 0.233448, 1.41814, 0.93432, 5.20146, 1.46029, 7.75926, 2.10341, 10.6434, 2.86379, 13.7655, 3.74152, 17.0372, 4.7367, 20.3703, 5.84944, 23.6765, 7.07982, 26.8672, 8.42796, 29.8544, 9.89395, 32.5496, 11.4779, 34.8644, 15, 38, 18.4791, 39.5887, 21.4158, 40.5206, 25.7585, 40.9628, 29, 40)
+position = Vector2(3.25, 0)
+points = PackedVector2Array(0.730317, -0.380274, 2.08022, 2.07351, 2.51383, 5.56051, 2.46174, 9.70414, 2.24228, 14.029, 2.15212, 17.9938, 2.3824, 20.9753, 2.81761, 22.7458, 4.55532, 23.7856, 7.57255, 23.4187, 10.7929, 21.7785, 13.8649, 19.4178, 18.0407, 16.8408, 20.506, 19.7594, 19.3182, 23.6701, 18.8904, 25.6938, 19.6863, 27.5512, 23.0392, 28.398, 26.6522, 30.3645)
+width = 8.0
+width_curve = SubResource("Curve_ro34f")

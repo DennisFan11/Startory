@@ -6,8 +6,8 @@ var damp = 5 #每幀pix
 
 
 var speed:float = 3 #每幀pix
-var max_speed:float = 50 
-var max_run_speed:float = 80
+var max_speed:float = 100 
+var max_run_speed:float = 160
 var player_position:Vector2 = Vector2.ZERO
 var move_vector:Vector2 = Vector2.ZERO
 var running:bool = false

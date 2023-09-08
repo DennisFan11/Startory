@@ -3,7 +3,8 @@ extends Path2D
 func _ready():
 	$blood_meat.position=Vector2(0,0)
 var time=0
-@export var anime = false
+
+
 @export var 擺幅:float = 1
 @export var 波長 = 2
 @export var 波速 = 1

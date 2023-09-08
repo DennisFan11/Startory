@@ -2,7 +2,9 @@ extends Node
 var ctrl
 var Gctrl
 var map = {}
-var damp = 5 #每幀pix
+var damp = 1 #每幀pix
+
+var dirt = preload("res://asset_lib/sprites/dirt.png")
 
 
 var speed:float = 3 #每幀pix
@@ -18,9 +20,9 @@ var aim:bool = false
 var hp:int = 10
 
 
-var block_size = 32
-var chunk_size = 6
-var chunk_array_load = empty_chunk_array(3) #9*9
+var block_size = 16
+var chunk_size = 9
+var chunk_array_load = empty_chunk_array(9) #9*9
 var chunk_array_loaded = []
 
 

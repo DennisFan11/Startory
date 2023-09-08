@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://bau7larbfgj5"]
+
+[ext_resource type="Script" path="res://scenes/landing_craft/player_body.gd" id="1_uda0p"]
+[ext_resource type="Texture2D" uid="uid://myegwtf20ut1" path="res://asset_lib/sprites/fire.png" id="2_ld73y"]
+[ext_resource type="Texture2D" uid="uid://0v7o4065ol8r" path="res://asset_lib/sprites/landing_craft.png" id="3_jcfh5"]
+[ext_resource type="Texture2D" uid="uid://dfkcy2aqc7ykx" path="res://asset_lib/sprites/landing_craftfloor.png" id="4_720ms"]
+[ext_resource type="Texture2D" uid="uid://duab2p7c885au" path="res://asset_lib/sprites/landing_craftdoor.png" id="4_tk885"]
+[ext_resource type="Texture2D" uid="uid://b2iv73i6g1hcd" path="res://asset_lib/sprites/landing_craftglass.png" id="5_pbvlv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ueqfl"]
+radius = 16.0
+
+[node name="landing_craft" type="Node2D"]
+script = ExtResource("1_uda0p")
+
+[node name="body" type="RigidBody2D" parent="."]
+
+[node name="fire" type="Line2D" parent="body"]
+position = Vector2(-19, 30)
+points = PackedVector2Array(0, 0, 0, 6)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="fire2" type="Line2D" parent="body"]
+position = Vector2(19, 30)
+points = PackedVector2Array(0, 0, 0, 6)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="fire3" type="Line2D" parent="body"]
+position = Vector2(30, -19)
+points = PackedVector2Array(0, 0, 6, 0)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="fire4" type="Line2D" parent="body"]
+position = Vector2(30, 19)
+points = PackedVector2Array(0, 0, 6, 0)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="fire5" type="Line2D" parent="body"]
+position = Vector2(-30, 19)
+points = PackedVector2Array(0, 0, -6, 0)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="fire6" type="Line2D" parent="body"]
+position = Vector2(-30, -19)
+points = PackedVector2Array(0, 0, -6, 0)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="fire7" type="Line2D" parent="body"]
+position = Vector2(-19, -30)
+points = PackedVector2Array(0, 0, 0, -6)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="fire8" type="Line2D" parent="body"]
+position = Vector2(19, -30)
+points = PackedVector2Array(0, 0, 0, -6)
+width = 5.0
+texture = ExtResource("2_ld73y")
+texture_mode = 2
+
+[node name="landing_craft" type="Sprite2D" parent="body"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_jcfh5")
+
+[node name="floor" type="Sprite2D" parent="body/landing_craft"]
+show_behind_parent = true
+texture = ExtResource("4_720ms")
+
+[node name="door" type="Sprite2D" parent="body/landing_craft"]
+texture = ExtResource("4_tk885")
+
+[node name="door2" type="Sprite2D" parent="body/landing_craft"]
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(-1, 1)
+texture = ExtResource("4_tk885")
+
+[node name="glass" type="Sprite2D" parent="body/landing_craft"]
+texture = ExtResource("5_pbvlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
+visible = false
+shape = SubResource("CircleShape2D_ueqfl")

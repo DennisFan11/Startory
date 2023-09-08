@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_ctrl/map.gd" id="1_o7naf"]
 [ext_resource type="Script" path="res://scenes/game_ctrl/player.gd" id="2_dl0wq"]
-[ext_resource type="PackedScene" uid="uid://bau7larbfgj5" path="res://scenes/player_body/player_body.tscn" id="3_efjsl"]
+[ext_resource type="PackedScene" uid="uid://bau7larbfgj5" path="res://scenes/landing_craft/player_body.tscn" id="3_xi6a5"]
 
 [node name="game_ctrl" type="Node"]
 
@@ -21,4 +21,4 @@ script = ExtResource("2_dl0wq")
 
 [node name="Camera" type="Camera2D" parent="player"]
 
-[node name="player_body" parent="." instance=ExtResource("3_efjsl")]
+[node name="landing_craft" parent="." instance=ExtResource("3_xi6a5")]

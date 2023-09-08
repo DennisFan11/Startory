@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyibugd1tm4ah"]
 
-[ext_resource type="Script" path="res://scenes/player_body/foot.gd" id="1_uqyca"]
-[ext_resource type="PackedScene" uid="uid://cg6ufw1ffh6kv" path="res://scenes/player_body/blood_meat.tscn" id="2_pxnim"]
+[ext_resource type="Script" path="res://scenes/landing_craft/foot.gd" id="1_uqyca"]
+[ext_resource type="PackedScene" uid="uid://cg6ufw1ffh6kv" path="res://scenes/landing_craft/blood_meat.tscn" id="2_pxnim"]
 
 [sub_resource type="Curve2D" id="Curve2D_jt0by"]
 _data = {

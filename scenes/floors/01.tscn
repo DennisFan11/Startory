@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://qqwbj5l7iuqh"]
+[gd_scene load_steps=2 format=3 uid="uid://qqwbj5l7iuqh"]
 
-[ext_resource type="Texture2D" uid="uid://bbmos42obx467" path="res://asset_lib/sprites/dirt.png" id="1_jwdjo"]
 [ext_resource type="Script" path="res://scenes/floors/01.gd" id="1_otxix"]
 
 [node name="01" type="Sprite2D"]
-texture = ExtResource("1_jwdjo")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
 region_filter_clip_enabled = true

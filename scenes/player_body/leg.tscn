@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyibugd1tm4ah"]
 
-[ext_resource type="Script" path="res://scenes/landing_craft/foot.gd" id="1_uqyca"]
-[ext_resource type="PackedScene" uid="uid://cg6ufw1ffh6kv" path="res://scenes/landing_craft/blood_meat.tscn" id="2_pxnim"]
+[ext_resource type="Script" path="res://scenes/player_body/leg.gd" id="1_chhyq"]
+[ext_resource type="Texture2D" uid="uid://c7fptoa2st1lw" path="res://asset_lib/sprites/blood_meat.png" id="2_584q6"]
 
 [sub_resource type="Curve2D" id="Curve2D_jt0by"]
 _data = {
@@ -13,11 +13,10 @@ point_count = 4
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.365979, 0.663158), 0.0, 0.0, 0, 0, Vector2(0.938144, 0.115789), 0.249037, 0.249037, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[node name="foot" type="Path2D"]
+[node name="leg" type="Path2D"]
 scale = Vector2(0.615385, 0.667565)
 curve = SubResource("Curve2D_jt0by")
-script = ExtResource("1_uqyca")
-anime = true
+script = ExtResource("1_chhyq")
 "擺幅" = 0.5
 "波長" = 10
 "波速" = 30
@@ -25,8 +24,13 @@ anime = true
 "波長2" = 80
 "波速2" = 90
 
-[node name="blood_meat" parent="." instance=ExtResource("2_pxnim")]
+[node name="blood_meat" type="Line2D" parent="."]
 show_behind_parent = true
-points = PackedVector2Array(0.730317, -0.380274, 2.08022, 2.07351, 2.51383, 5.56051, 2.46174, 9.70414, 2.24228, 14.029, 2.15212, 17.9938, 2.3824, 20.9753, 2.81761, 22.7458, 4.55532, 23.7856, 7.57255, 23.4187, 10.7929, 21.7785, 13.8649, 19.4178, 18.0407, 16.8408, 20.506, 19.7594, 19.3182, 23.6701, 18.8904, 25.6938, 19.6863, 27.5512, 23.0392, 28.398, 26.6522, 30.3645)
-width = 8.0
+texture_repeat = 2
+points = PackedVector2Array(-0.286548, 0.149205, 0.813803, 2.15901, 1.02746, 5.45475, 0.650051, 9.52449, 0.0348926, 13.9212, -0.402824, 18.2705, -0.121046, 22.3014, 1.71397, 25.5297, 5.13555, 26.835, 9.14736, 26.16, 12.8119, 24.1716, 16.0062, 21.5396, 16.242, 19.0587, 17.8911, 19.0171, 16.818, 23.3848, 16.8124, 26.9186, 19.0874, 29.8072, 21.8653, 30.3654, 25.4635, 32.3569)
+width = 15.0
 width_curve = SubResource("Curve_ro34f")
+texture = ExtResource("2_584q6")
+texture_mode = 1
+begin_cap_mode = 1
+end_cap_mode = 1

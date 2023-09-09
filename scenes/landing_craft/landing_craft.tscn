@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bau7larbfgj5"]
 
-[ext_resource type="Script" path="res://scenes/landing_craft/player_body.gd" id="1_uda0p"]
+[ext_resource type="Script" path="res://scenes/landing_craft/landing_craft.gd" id="1_tkqto"]
 [ext_resource type="Texture2D" uid="uid://myegwtf20ut1" path="res://asset_lib/sprites/fire.png" id="2_ld73y"]
 [ext_resource type="Texture2D" uid="uid://0v7o4065ol8r" path="res://asset_lib/sprites/landing_craft.png" id="3_jcfh5"]
 [ext_resource type="Texture2D" uid="uid://dfkcy2aqc7ykx" path="res://asset_lib/sprites/landing_craftfloor.png" id="4_720ms"]
@@ -11,7 +11,7 @@
 radius = 16.0
 
 [node name="landing_craft" type="Node2D"]
-script = ExtResource("1_uda0p")
+script = ExtResource("1_tkqto")
 
 [node name="body" type="RigidBody2D" parent="."]
 

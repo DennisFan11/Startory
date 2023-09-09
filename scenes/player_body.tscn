@@ -16,18 +16,18 @@ script = ExtResource("1_icq07")
 shape = SubResource("CircleShape2D_jgudl")
 
 [node name="leg" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(12, 16)
+position = Vector2(14, 13)
 
 [node name="leg2" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(-12, 16)
+position = Vector2(-14, 13)
 scale = Vector2(-0.615385, 0.667565)
 
 [node name="leg3" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(12, -16)
+position = Vector2(14, -13)
 scale = Vector2(0.615385, -0.667565)
 
 [node name="leg4" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(-12, -16)
+position = Vector2(-14, -13)
 scale = Vector2(-0.615385, -0.667565)
 
 [node name="body" type="Sprite2D" parent="body"]

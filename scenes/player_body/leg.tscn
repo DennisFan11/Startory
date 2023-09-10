@@ -12,9 +12,9 @@ point_count = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rw30f"]
 shader = ExtResource("2_2iava")
-shader_parameter/wave_h = 0.5
-shader_parameter/wave_w = 10.0
-shader_parameter/wave_s = 60.0
+shader_parameter/wave_h = 0.05
+shader_parameter/wave_w = 0.75
+shader_parameter/wave_s = 6.0
 
 [sub_resource type="Curve" id="Curve_ro34f"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.365979, 0.663158), 0.0, 0.0, 0, 0, Vector2(0.64433, 0.452632), -0.600619, -0.600619, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

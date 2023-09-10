@@ -13,11 +13,11 @@ func _leg_setting():
 	$body/leg4.scale = $body/leg.scale
 	
 	$body/leg2.position = Vector2(origin.x*-1,origin.y) #左下
-	$body/leg2.scale.x*=-1
+	$body/leg2.scale.x *=-1
 	$body/leg3.position = Vector2(origin.x,origin.y*-1) #右上
-	$body/leg3.scale.y*=-1
+	$body/leg3.scale.y *=-1
 	$body/leg4.position = Vector2(origin.x*-1,origin.y*-1)#左上
-	$body/leg4.scale*=-1
+	$body/leg4.scale *=-1
 	
 	
 

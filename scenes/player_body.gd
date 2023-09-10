@@ -18,8 +18,6 @@ func _leg_setting():
 	$body/leg3.scale.y *=-1
 	$body/leg4.position = Vector2(origin.x*-1,origin.y*-1)#左上
 	$body/leg4.scale *=-1
-	
-	
 
 func _physics_process(delta):
 	if not Engine.is_editor_hint():

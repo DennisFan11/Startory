@@ -14,6 +14,9 @@ shader_parameter/wave_h = 0.05
 shader_parameter/wave_w = 0.75
 shader_parameter/wave_s = 6.0
 shader_parameter/center1 = Vector2(0.6, 0.5)
+shader_parameter/red = Vector4(1, 0.3, 1, 0.3)
+shader_parameter/blue = Vector4(0.3, 1, 1, 0.3)
+shader_parameter/range = 0.02
 
 [node name="player_body" type="Node2D"]
 script = ExtResource("1_icq07")

@@ -40,4 +40,5 @@ void fragment() {
 	else{
 		COLOR = texture(TEXTURE, uv);
 	}
+	COLOR = texture(TEXTURE, uv);
 }

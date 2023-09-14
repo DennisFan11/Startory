@@ -1,10 +1,12 @@
-@tool
 extends Node2D
 var angle = 0
+var rot = false
 var Out = 5
 var In = 20
 var curve1
 var moving:bool = false
+var using:bool = false
+var choice:bool = false
 func _ready():
 	curve1 = $leg_path.curve
 	$leg_path/blood_meat.position = Vector2(0,0)
@@ -17,7 +19,23 @@ func _process(delta):
 	curve1.set_point_position(2,Vector2($out.position.x,$out.position.y+20))
 	var point
 	if(angle == 1)or (angle == 3):
-		point = Vector2(-20,-15)
+		if rot == false:
+			point = Vector2(-20,-15)
+		else:
+			point = Vector2(20,-15)
 	else:
-		point = Vector2(20,-15)
+		if rot == false:
+			point = Vector2(20,-15)
+		else:
+			point = Vector2(-20,-15)
+	if angle == Global.choice:
+		choice = true
+		print("choice:",Global.choice)
+		$out/Label.text = "TRUE"
+	else: 
+		choice = false
+		$out/Label.text = "FALSE"
+	
+	$leg_path/blood_meat.material.set_shader_parameter("choice",choice)
 	curve1.set_point_in(2,point)
+	

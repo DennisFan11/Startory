@@ -30,7 +30,7 @@ step = 40.0
 
 [node name="leg4" parent="." instance=ExtResource("1_7nuvr")]
 
-[node name="body" type="RigidBody2D" parent="."]
+[node name="body" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 shape = SubResource("CircleShape2D_jgudl")
@@ -67,3 +67,9 @@ position = Vector2(-24, -23)
 [node name="speed" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
 width = 3.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 71.0
+offset_bottom = 52.0
+text = "0 px/s
+angle:0PI"

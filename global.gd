@@ -2,15 +2,15 @@ extends Node
 var ctrl
 var Gctrl
 var map = {}
-var damp = 1 #每幀pix
+var damp:float = 10 #每幀pix
 
 var dirt = preload("res://asset_lib/sprites/dirt.png")
 
 
 var speed:float = 3 #每幀pix
-var run_speed:float = 18
-var max_speed:float = 100 
-var max_run_speed:float = 300
+var run_speed:float = 6
+var max_speed:float = 50 
+var max_run_speed:float = 100
 var player_position:Vector2 = Vector2.ZERO
 var move_vector:Vector2 = Vector2.ZERO
 var running:bool = false

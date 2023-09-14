@@ -4,9 +4,9 @@
 [ext_resource type="Shader" path="res://scenes/player_body/leg_shader.gdshader" id="2_2iava"]
 [ext_resource type="Texture2D" uid="uid://c7fptoa2st1lw" path="res://asset_lib/sprites/blood_meat.png" id="2_584q6"]
 
-[sub_resource type="Curve2D" id="Curve2D_jt0by"]
+[sub_resource type="Curve2D" id="Curve2D_d8a43"]
 _data = {
-"points": PackedVector2Array(-4.48485, -3.70376, 4.48485, 3.70376, 0, 0, 0, 0, 0, 0, 24.375, 10.4859, 20.3367, -16.6641, -20.3367, 16.6641, 26, 29.9596)
+"points": PackedVector2Array(-6.28864, -5.20408, 3.53553, 3.53553, 0, 0, 0, 0, 0, 0, 10, 10, 20, -15, -29.8112, 21.091, 10, 30)
 }
 point_count = 3
 
@@ -20,16 +20,17 @@ shader_parameter/wave_s = 6.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.365979, 0.663158), 0.0, 0.0, 0, 0, Vector2(0.64433, 0.452632), -0.600619, -0.600619, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[node name="leg" type="Path2D"]
-scale = Vector2(0.615385, 0.667565)
-curve = SubResource("Curve2D_jt0by")
+[node name="leg" type="Node2D"]
 script = ExtResource("1_chhyq")
 
-[node name="blood_meat" type="Line2D" parent="."]
+[node name="leg_path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_d8a43")
+
+[node name="blood_meat" type="Line2D" parent="leg_path"]
 show_behind_parent = true
 texture_repeat = 2
 material = SubResource("ShaderMaterial_rw30f")
-points = PackedVector2Array(0, 0, 2.33501, 1.51395, 5.70064, 3.20094, 9.68328, 4.94542, 13.8693, 6.63184, 17.8451, 8.14465, 21.1971, 9.36829, 24.375, 10.4859, 27.4887, 11.1853, 30.2514, 12.2536, 32.8138, 13.9737, 34.4229, 16.4749, 34.3256, 19.8867, 33.4018, 21.9745, 31.769, 24.3384, 29.3331, 26.9948, 26, 29.9596)
+points = PackedVector2Array(0, 0, 3.05405, 3.05405, 6.32583, 6.32583, 8.93468, 8.93468, 10, 10, 12.8125, 11.0156, 15.2734, 12.373, 17.5, 14.375, 18.7891, 17.0801, 18.4375, 20.5469, 17.4268, 22.5842, 15.7422, 24.834, 13.2959, 27.3035, 10, 30)
 width = 33.0
 width_curve = SubResource("Curve_ro34f")
 texture = ExtResource("2_584q6")
@@ -37,8 +38,9 @@ texture_mode = 1
 begin_cap_mode = 1
 end_cap_mode = 1
 
-[node name="Marker1" type="Marker2D" parent="."]
-scale = Vector2(1, 1)
+[node name="in" type="Marker2D" parent="."]
+visible = false
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(24.375, 10.4859)
+[node name="out" type="Marker2D" parent="."]
+visible = false
+position = Vector2(10, 10)

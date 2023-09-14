@@ -10,6 +10,9 @@ void fragment() {
 	float wave = sin((TIME*wave_s+uv.x)/wave_w)*wave_h*(uv.x*2.0);
 	uv.y += wave;
 	COLOR = texture(TEXTURE, uv);
+	if (UV.x <= 0.4){
+		COLOR = vec4(0,0,0,0);
+	}
 }
 
 

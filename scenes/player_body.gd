@@ -1,25 +1,27 @@
 @tool
 extends Node2D
-
-
+@export var 步長 = 10
+var markers = []
+var body_markers = []
+var body_target_markers = []
 
 func _ready():
-	_leg_setting()
+	markers.append($leg/Marker2D)
+	markers.append($leg2/Marker2D)
+	markers.append($leg3/Marker2D)
+	markers.append($leg4/Marker2D)
+	body_markers.append($leg/Marker1)
+	body_markers.append($leg2/Marker1)
+	body_markers.append($leg3/Marker1)
+	body_markers.append($leg4/Marker1)
+	body_target_markers.append($body/Marker1)
+	body_target_markers.append($body/Marker2)
+	body_target_markers.append($body/Marker3)
+	body_target_markers.append($body/Marker4)
 	
-func _leg_setting():
-	var origin:Vector2 = $body/leg.position #右下
-	$body/leg2.scale = $body/leg.scale
-	$body/leg3.scale = $body/leg.scale
-	$body/leg4.scale = $body/leg.scale
+func _leg_move():
+	var pos = Global.player_position
 	
-	$body/leg2.position = Vector2(origin.x*-1,origin.y) #左下
-	$body/leg2.scale.x *=-1
-	$body/leg3.position = Vector2(origin.x,origin.y*-1) #右上
-	$body/leg3.scale.y *=-1
-	$body/leg4.position = Vector2(origin.x*-1,origin.y*-1)#左上
-	$body/leg4.scale *=-1
-	
-	$body/leg3.curve.set_point_position(1, Vector2(30.875, 29.96))
 
 func _physics_process(delta):
 	if not Engine.is_editor_hint():
@@ -36,3 +38,4 @@ func _physics_process(delta):
 			$body.apply_central_impulse(vec)
 		Global.player_position=$body.position
 	
+

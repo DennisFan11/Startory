@@ -20,28 +20,39 @@ shader_parameter/range = 0.02
 
 [node name="player_body" type="Node2D"]
 script = ExtResource("1_icq07")
+"步長" = null
+
+[node name="leg" parent="." instance=ExtResource("1_7nuvr")]
+position = Vector2(14, 13)
+
+[node name="leg2" parent="." instance=ExtResource("1_7nuvr")]
+position = Vector2(-14, 13)
+rotation = 3.14159
+scale = Vector2(-0.615385, 0.667565)
+
+[node name="leg3" parent="." instance=ExtResource("1_7nuvr")]
+position = Vector2(14, -13)
+scale = Vector2(0.615385, -0.667565)
+
+[node name="leg4" parent="." instance=ExtResource("1_7nuvr")]
+position = Vector2(-14, -13)
+rotation = 3.14159
+scale = Vector2(-0.615385, -0.667565)
 
 [node name="body" type="RigidBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 shape = SubResource("CircleShape2D_jgudl")
 
-[node name="leg" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(14, 13)
-
-[node name="leg2" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(-14, 13)
-scale = Vector2(-0.615385, 0.667565)
-
-[node name="leg3" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(14, -13)
-scale = Vector2(0.615385, -0.667565)
-
-[node name="leg4" parent="body" instance=ExtResource("1_7nuvr")]
-position = Vector2(-14, -13)
-scale = Vector2(-0.615385, -0.667565)
-
 [node name="body" type="Sprite2D" parent="body"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_jdt0h")
 texture = ExtResource("1_6hqea")
+
+[node name="Marker1" type="Marker2D" parent="body"]
+
+[node name="Marker2" type="Marker2D" parent="body"]
+
+[node name="Marker3" type="Marker2D" parent="body"]
+
+[node name="Marker4" type="Marker2D" parent="body"]

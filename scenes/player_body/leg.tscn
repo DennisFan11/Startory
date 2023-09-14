@@ -6,9 +6,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_jt0by"]
 _data = {
-"points": PackedVector2Array(-4.48485, -3.70376, 4.48485, 3.70376, 0, 0, 0, 0, 0, 0, 34.125, 4.49394, -4.88051, -4.37405, 4.88051, 4.37405, 30.875, 29.96, 0, 0, 0, 0, 30.875, 29.96, 19.2159, -23.3471, -19.2159, 23.3471, 30.875, 29.96)
+"points": PackedVector2Array(-4.48485, -3.70376, 4.48485, 3.70376, 0, 0, 0, 0, 0, 0, 24.375, 10.4859, 20.3367, -16.6641, -20.3367, 16.6641, 26, 29.9596)
 }
-point_count = 5
+point_count = 3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rw30f"]
 shader = ExtResource("2_2iava")
@@ -29,7 +29,7 @@ script = ExtResource("1_chhyq")
 show_behind_parent = true
 texture_repeat = 2
 material = SubResource("ShaderMaterial_rw30f")
-points = PackedVector2Array(0, 0, 2.75395, 1.25648, 7.22407, 2.2647, 9.90203, 2.68349, 12.7682, 3.04954, 15.7424, 3.36597, 18.7443, 3.63588, 21.6936, 3.86239, 24.5102, 4.04861, 29.4236, 4.31261, 34.125, 4.49394, 32.9308, 7.85791, 31.8098, 11.3982, 30.6698, 15.5867, 29.7586, 19.9802, 29.3238, 24.1356, 29.6134, 27.6099, 30.875, 29.96, 30.875, 29.96, 30.875, 29.96)
+points = PackedVector2Array(0, 0, 2.33501, 1.51395, 5.70064, 3.20094, 9.68328, 4.94542, 13.8693, 6.63184, 17.8451, 8.14465, 21.1971, 9.36829, 24.375, 10.4859, 27.4887, 11.1853, 30.2514, 12.2536, 32.8138, 13.9737, 34.4229, 16.4749, 34.3256, 19.8867, 33.4018, 21.9745, 31.769, 24.3384, 29.3331, 26.9948, 26, 29.9596)
 width = 33.0
 width_curve = SubResource("Curve_ro34f")
 texture = ExtResource("2_584q6")
@@ -37,5 +37,8 @@ texture_mode = 1
 begin_cap_mode = 1
 end_cap_mode = 1
 
+[node name="Marker1" type="Marker2D" parent="."]
+scale = Vector2(1, 1)
+
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(39, 5.99193)
+position = Vector2(24.375, 10.4859)

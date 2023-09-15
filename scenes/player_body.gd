@@ -4,6 +4,7 @@ var this_in = []
 var this_out = []
 var leg_in = []
 var leg_out = []
+var leg_speed = 20
 
 var index = [0,3,1,2]
 var id = 0
@@ -44,9 +45,11 @@ func _physics_process(delta):
 		if Global.running == true:
 			max = Global.max_run_speed
 			speed = Global.run_speed
+			leg_speed = 40
 		else:
 			max = Global.max_speed
 			speed = Global.speed
+			leg_speed = 20
 		speed_velocity += Global.move_vector * speed
 		if speed_velocity.length()>Global.damp:
 			speed_velocity = (speed_velocity.length() - Global.damp) * speed_velocity.normalized()
@@ -115,7 +118,7 @@ func _leg_move(delta,target):
 			if target_len >= 30:
 				leg_out[i].get_node("..").moving = true
 		elif target_move_len >= 10:
-			leg_out[i].position = leg_out[i].position.lerp(this_out[i].global_position+target/3,delta*20)
+			leg_out[i].position = leg_out[i].position.lerp(this_out[i].global_position+target/3,delta*leg_speed)
 		else:
 			leg_out[i].get_node("..").moving = false
 			id += 1

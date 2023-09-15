@@ -4,6 +4,7 @@ var Gctrl
 var map = {}
 var choice = 0
 
+var player_view_range = 400 #pix
 var damp:float = 10 #每幀pix
 var speed:float = 12 #每幀pix
 var run_speed:float = 16

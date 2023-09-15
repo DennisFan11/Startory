@@ -1,4 +1,3 @@
-
 extends Node2D
 @export var step:float = 10
 var this_in = []

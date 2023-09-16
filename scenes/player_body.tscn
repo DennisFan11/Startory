@@ -55,13 +55,13 @@ position = Vector2(11, -10)
 position = Vector2(-11, -10)
 
 [node name="out1" type="Marker2D" parent="body"]
-position = Vector2(24, 23)
+position = Vector2(32, 32)
 
 [node name="out2" type="Marker2D" parent="body"]
-position = Vector2(-24, 23)
+position = Vector2(-32, 32)
 
 [node name="out3" type="Marker2D" parent="body"]
-position = Vector2(24, -23)
+position = Vector2(32, -32)
 
 [node name="out4" type="Marker2D" parent="body"]
-position = Vector2(-24, -23)
+position = Vector2(-32, -32)

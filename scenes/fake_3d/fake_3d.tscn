@@ -1,30 +1,38 @@
 [gd_scene load_steps=7 format=3 uid="uid://bju3mnmbhe261"]
 
-[ext_resource type="Shader" path="res://scenes/landing_craft/Fake3D.gdshader" id="1_5l17b"]
-[ext_resource type="Script" path="res://scenes/landing_craft/Fake3D.gd" id="2_5ln4q"]
+[ext_resource type="Shader" path="res://scenes/fake_3d/fake_3d_tr.gdshader" id="1_vmoxg"]
+[ext_resource type="Script" path="res://scenes/fake_3d/fake_3d_tr.gd" id="2_ajlx1"]
 [ext_resource type="Texture2D" uid="uid://d07m11lhsgju0" path="res://asset_lib/sprites/block_dirt.png" id="3_e7od4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_53chg"]
 resource_local_to_scene = true
-shader = ExtResource("1_5l17b")
-shader_parameter/A1 = 0.3
-shader_parameter/A2 = 0.3
-shader_parameter/B1 = 0.3
-shader_parameter/B2 = 0.3
+shader = ExtResource("1_vmoxg")
+shader_parameter/A1 = 0.2
+shader_parameter/A2 = 0.2
+shader_parameter/B1 = 0.2
+shader_parameter/B2 = 0.2
 shader_parameter/dist = 0.0
 shader_parameter/angle = 0.0
+shader_parameter/U = true
+shader_parameter/D = true
+shader_parameter/L = true
+shader_parameter/R = true
+shader_parameter/RU = true
+shader_parameter/RD = true
+shader_parameter/LU = true
+shader_parameter/LD = true
 
-[sub_resource type="Curve" id="Curve_c722f"]
-_data = [Vector2(0, 0.315789), 0.0, 0.41791, 0, 0, Vector2(1, 0.736842), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_jw1hh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.684211), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llonl"]
-size = Vector2(18, 18)
+size = Vector2(16, 16)
 
 [node name="Fake3D" type="Node2D"]
 material = SubResource("ShaderMaterial_53chg")
-script = ExtResource("2_5ln4q")
-c = SubResource("Curve_c722f")
+script = ExtResource("2_ajlx1")
+c = SubResource("Curve_jw1hh")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
@@ -37,4 +45,5 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4
 shape = SubResource("RectangleShape2D_llonl")

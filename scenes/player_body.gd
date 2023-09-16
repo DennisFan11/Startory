@@ -125,7 +125,7 @@ func _rotat(delta):
 		leg_in[i].get_node("..").rot = rot
 
 var time =0
-var max_time = 0.5
+var max_time = 0.3
 var 容許距離 = 30
 var 回歸速度 = 1
 var last_pos

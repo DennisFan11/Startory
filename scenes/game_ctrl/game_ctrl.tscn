@@ -1,31 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b531acq8g2lej"]
+[gd_scene load_steps=5 format=3 uid="uid://b531acq8g2lej"]
 
 [ext_resource type="Script" path="res://scenes/game_ctrl/map.gd" id="1_o7naf"]
 [ext_resource type="Script" path="res://scenes/game_ctrl/player.gd" id="2_dl0wq"]
 [ext_resource type="PackedScene" uid="uid://b6bokd2ep457s" path="res://scenes/player_body.tscn" id="3_n7x5w"]
 [ext_resource type="PackedScene" uid="uid://bau7larbfgj5" path="res://scenes/landing_craft/landing_craft.tscn" id="4_btgcq"]
-[ext_resource type="PackedScene" uid="uid://bju3mnmbhe261" path="res://scenes/fake_3d/fake_3d.tscn" id="5_f85hd"]
-[ext_resource type="Shader" path="res://scenes/landing_craft/Fake3D.gdshader" id="6_7vbmb"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uax0d"]
-resource_local_to_scene = true
-shader = ExtResource("6_7vbmb")
-shader_parameter/A1 = 0.3
-shader_parameter/A2 = 0.3
-shader_parameter/B1 = 0.3
-shader_parameter/B2 = 0.3
-shader_parameter/dist = 0.0
-shader_parameter/angle = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tkqfj"]
-resource_local_to_scene = true
-shader = ExtResource("6_7vbmb")
-shader_parameter/A1 = 0.3
-shader_parameter/A2 = 0.3
-shader_parameter/B1 = 0.3
-shader_parameter/B2 = 0.3
-shader_parameter/dist = 0.0
-shader_parameter/angle = 0.0
 
 [node name="game_ctrl" type="Node"]
 
@@ -49,15 +27,7 @@ script = ExtResource("2_dl0wq")
 [node name="player_body" parent="." instance=ExtResource("3_n7x5w")]
 
 [node name="landing_craft" parent="." instance=ExtResource("4_btgcq")]
-position = Vector2(151, 118)
+position = Vector2(65, 237)
 
 [node name="landing_craft2" parent="." instance=ExtResource("4_btgcq")]
-position = Vector2(536, 165)
-
-[node name="Fake3D" parent="." instance=ExtResource("5_f85hd")]
-material = SubResource("ShaderMaterial_uax0d")
-position = Vector2(325, 23)
-
-[node name="Fake3D2" parent="." instance=ExtResource("5_f85hd")]
-material = SubResource("ShaderMaterial_tkqfj")
-position = Vector2(372, 23)
+position = Vector2(251, 78)

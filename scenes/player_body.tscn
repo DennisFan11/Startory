@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6bokd2ep457s"]
+[gd_scene load_steps=6 format=3 uid="uid://b6bokd2ep457s"]
 
 [ext_resource type="Texture2D" uid="uid://ywficry6q3x0" path="res://asset_lib/sprites/body.png" id="1_6hqea"]
 [ext_resource type="Script" path="res://scenes/player_body.gd" id="1_icq07"]
-[ext_resource type="PackedScene" uid="uid://cyibugd1tm4ah" path="res://scenes/player_body/leg.tscn" id="2_jisuj"]
 [ext_resource type="Shader" path="res://scenes/player_body/body_shader.gdshader" id="3_bfl0i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jgudl"]
@@ -32,20 +31,14 @@ offset_bottom = 52.0
 text = "0 px/s
 "
 
-[node name="leg" parent="." instance=ExtResource("2_jisuj")]
-
-[node name="leg2" parent="." instance=ExtResource("2_jisuj")]
-
-[node name="leg3" parent="." instance=ExtResource("2_jisuj")]
-
-[node name="leg4" parent="." instance=ExtResource("2_jisuj")]
-
 [node name="body" type="CharacterBody2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 shape = SubResource("CircleShape2D_jgudl")
 
 [node name="body" type="Sprite2D" parent="body"]
+z_index = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_jdt0h")
 texture = ExtResource("1_6hqea")

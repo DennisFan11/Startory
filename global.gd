@@ -9,7 +9,7 @@ var damp:float = 10 #每幀pix
 var speed:float = 12 #每幀pix 12
 var run_speed:float = 16
 var max_speed:float = 100 
-var max_run_speed:float = 500 #150
+var max_run_speed:float = 200 #150
 
 var dirt = preload("res://asset_lib/sprites/dirt.png")
 

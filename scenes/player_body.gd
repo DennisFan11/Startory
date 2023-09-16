@@ -5,20 +5,34 @@ var this_out = []
 var leg_in = []
 var leg_out = []
 var leg_speed = 20
-
-
-
 var index = [0,3,1,2]
 var id = 0
 
 var speed_velocity = Vector2.ZERO
 func _ready():
-	_leg_add()
+	var path = load("res://scenes/player_body/leg.tscn")
+	for i in range(4):
+		var a = path.instantiate()
+		add_child(a)
+		leg_in.append(a.get_node("in"))
+		leg_out.append(a.get_node("out"))
+	for i in range(4):
+		leg_in[i].get_node("..").angle = i
+	this_in.append($body/in1)
+	this_in.append($body/in2)
+	this_in.append($body/in3)
+	this_in.append($body/in4)
+	this_out.append($body/out1)
+	this_out.append($body/out2)
+	this_out.append($body/out3)
+	this_out.append($body/out4)
 	for i in range(4):
 		leg_in[i].position = this_in[i].global_position
 	for i in range(4):
 		leg_out[i].position = this_out[i].global_position
 	_leg_move(0.1,Vector2(0,0))
+	for i in leg_out:
+		print(i.get_node(".."))
 	
 
 	
@@ -32,23 +46,35 @@ func _process(delta):
 func _choice_leg():
 	var out
 	var min:float = 100000
-	for i in range(4):
-		var dist = (get_global_mouse_position()-leg_out[i].global_position).length()
-		if dist < min :
+	var ida = 0
+	var outida
+	for i in leg_in:
+		var dist = (get_global_mouse_position()-i.global_position).length()
+		if dist <= min:
 			min = dist
 			out = i
-	Global.choice = out
+			outida = ida
+		ida+=1
+	Global.choice = outida
 	
+
 var charge_dist = 30
-var charged_length = 50 
+var charged_length = 200
+
+
+
 func _physics_process(delta):
 	if not Engine.is_editor_hint():
 		var charged = leg_out[Global.choice].get_node("..").charged
-		var targetVec = (get_global_mouse_position()-this_in[Global.choice].global_position).normalized()
-		if Global.shooting == true:
-			leg_out[Global.choice].global_position = this_in[Global.choice].global_position+targetVec*charge_dist
-		elif charged != 0 :
-			leg_out[Global.choice].global_position = this_in[Global.choice].global_position+targetVec*(charge_dist+charged*charged_length)
+		var targetVec = (leg_out[Global.choice].get_node("..").mouse-this_in[Global.choice].global_position).normalized()
+		var start_at = this_in[Global.choice].global_position
+		var move = leg_out[Global.choice].global_position
+		if Global.shooting == true: #沖能
+			leg_in[Global.choice].global_position = $body.position+targetVec*10
+			leg_out[Global.choice].global_position = start_at+targetVec*charge_dist
+		elif charged != 0 : #沖能
+			leg_in[Global.choice].global_position = $body.position+targetVec*10
+			leg_out[Global.choice].global_position = move.lerp(start_at+targetVec*(charged_length), delta*50) 
 			
 			
 			
@@ -83,26 +109,6 @@ func _speed_line():
 		$Label.text = str(int(speed_velocity.length()))+" px/s\n"
 		
 		
-		
-func _leg_add():
-	this_in.append($body/in1)
-	this_in.append($body/in2)
-	this_in.append($body/in3)
-	this_in.append($body/in4)
-	this_out.append($body/out1)
-	this_out.append($body/out2)
-	this_out.append($body/out3)
-	this_out.append($body/out4)
-	leg_in.append($leg/in)
-	leg_in.append($leg2/in)
-	leg_in.append($leg3/in)
-	leg_in.append($leg4/in)
-	leg_out.append($leg/out)
-	leg_out.append($leg2/out)
-	leg_out.append($leg3/out)
-	leg_out.append($leg4/out)
-	for i in range(4):
-		leg_in[i].get_node("..").angle = i
 func _rotat(delta):
 	# 平滑地旋轉物體
 	if speed_velocity != Vector2.ZERO:
@@ -118,21 +124,44 @@ func _rotat(delta):
 	for i in range(4):
 		leg_in[i].get_node("..").rot = rot
 
+var time =0
+var max_time = 0.5
+var 容許距離 = 30
+var 回歸速度 = 1
+var last_pos
 func _leg_move(delta,target):
+	
+	if last_pos != $body.position:
+		last_pos = $body.position
+		time = 0
+	else:
+		time += delta
+	if time >= max_time: #回歸
+		id += 1
+		容許距離 = 3
+		回歸速度 = 5
+	else:
+		容許距離 = 30
+		回歸速度 = 1
+		
 	for i in range(4):
 		leg_in[i].position = this_in[i].global_position
-	if id == 4:
+	if id >= 4:
 		id = 0
+	#末端設置
 	var i = index[id]
 	var target_len = (leg_out[i].position - this_out[i].global_position).length()
 	var target_move_len = (leg_out[i].position - this_out[i].global_position-target/3).length()
 	if leg_out[i].get_node("..").using == false:
 		if leg_out[i].get_node("..").moving == false:
-			if target_len >= 30:
+			if target_len >= 容許距離:
+				#移動開始
 				leg_out[i].get_node("..").moving = true
-		elif target_move_len >= 10*speed_velocity.length()/100:
-			leg_out[i].position = leg_out[i].position.lerp(this_out[i].global_position+target/3, delta*leg_speed)
+		elif target_move_len >= 10*speed_velocity.length()/100: 
+			#移動中
+			leg_out[i].position = leg_out[i].position.lerp(this_out[i].global_position+target/3, delta*leg_speed*回歸速度)
 		else:
+			#移動結束
 			leg_out[i].get_node("..").moving = false
 			id += 1
 	else:

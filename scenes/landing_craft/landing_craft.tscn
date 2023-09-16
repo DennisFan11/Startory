@@ -30,6 +30,9 @@ size = Vector2(128, 128)
 script = ExtResource("1_tkqto")
 
 [node name="body" type="RigidBody2D" parent="." groups=["can_hit"]]
+collision_layer = 3
+collision_mask = 3
+linear_damp = 10.0
 
 [node name="fires" type="Node2D" parent="body"]
 

@@ -31,6 +31,3 @@ position = Vector2(151, 118)
 
 [node name="landing_craft2" parent="." instance=ExtResource("4_btgcq")]
 position = Vector2(536, 165)
-
-[node name="landing_craft3" parent="." instance=ExtResource("4_btgcq")]
-position = Vector2(78, 402)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b531acq8g2lej"]
+[gd_scene load_steps=5 format=3 uid="uid://b531acq8g2lej"]
 
 [ext_resource type="Script" path="res://scenes/game_ctrl/map.gd" id="1_o7naf"]
 [ext_resource type="Script" path="res://scenes/game_ctrl/player.gd" id="2_dl0wq"]
 [ext_resource type="PackedScene" uid="uid://b6bokd2ep457s" path="res://scenes/player_body.tscn" id="3_n7x5w"]
+[ext_resource type="PackedScene" uid="uid://bau7larbfgj5" path="res://scenes/landing_craft/landing_craft.tscn" id="4_btgcq"]
 
 [node name="game_ctrl" type="Node"]
 
@@ -24,3 +25,12 @@ script = ExtResource("2_dl0wq")
 [node name="Camera" type="Camera2D" parent="player"]
 
 [node name="player_body" parent="." instance=ExtResource("3_n7x5w")]
+
+[node name="landing_craft" parent="." instance=ExtResource("4_btgcq")]
+position = Vector2(151, 118)
+
+[node name="landing_craft2" parent="." instance=ExtResource("4_btgcq")]
+position = Vector2(536, 165)
+
+[node name="landing_craft3" parent="." instance=ExtResource("4_btgcq")]
+position = Vector2(78, 402)

@@ -34,8 +34,8 @@ var doorMove = 20
 var doorSpeed= 0.5
 var doorProcess:float = 0
 func _門幀處理(delta):
-	var L = $body/Fake3D/landing_craft/door
-	var R = $body/Fake3D/landing_craft/door2
+	var L = $body/Fake3D/door
+	var R = $body/Fake3D/door2
 	if (door == true):
 		if (doorProcess >= 1):
 			doorProcess = 1

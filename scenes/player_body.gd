@@ -6,6 +6,8 @@ var leg_in = []
 var leg_out = []
 var leg_speed = 20
 
+
+
 var index = [0,3,1,2]
 var id = 0
 
@@ -31,15 +33,25 @@ func _choice_leg():
 	var out
 	var min:float = 100000
 	for i in range(4):
-		var dist = (get_global_mouse_position()-this_out[i].global_position).length()
+		var dist = (get_global_mouse_position()-leg_out[i].global_position).length()
 		if dist < min :
 			min = dist
 			out = i
 	Global.choice = out
 	
-
+var charge_dist = 30
+var charged_length = 50 
 func _physics_process(delta):
 	if not Engine.is_editor_hint():
+		var charged = leg_out[Global.choice].get_node("..").charged
+		var targetVec = (get_global_mouse_position()-this_in[Global.choice].global_position).normalized()
+		if Global.shooting == true:
+			leg_out[Global.choice].global_position = this_in[Global.choice].global_position+targetVec*charge_dist
+		elif charged != 0 :
+			leg_out[Global.choice].global_position = this_in[Global.choice].global_position+targetVec*(charge_dist+charged*charged_length)
+			
+			
+			
 		var max
 		var speed
 		if Global.running == true:
@@ -51,6 +63,7 @@ func _physics_process(delta):
 			speed = Global.speed
 			leg_speed = 20
 		speed_velocity += Global.move_vector * speed
+		
 		if speed_velocity.length()>Global.damp:
 			speed_velocity = (speed_velocity.length() - Global.damp) * speed_velocity.normalized()
 		else:
@@ -117,8 +130,8 @@ func _leg_move(delta,target):
 		if leg_out[i].get_node("..").moving == false:
 			if target_len >= 30:
 				leg_out[i].get_node("..").moving = true
-		elif target_move_len >= 10:
-			leg_out[i].position = leg_out[i].position.lerp(this_out[i].global_position+target/3,delta*leg_speed)
+		elif target_move_len >= 10*speed_velocity.length()/100:
+			leg_out[i].position = leg_out[i].position.lerp(this_out[i].global_position+target/3, delta*leg_speed)
 		else:
 			leg_out[i].get_node("..").moving = false
 			id += 1

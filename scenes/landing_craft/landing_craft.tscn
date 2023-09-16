@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://duab2p7c885au" path="res://asset_lib/sprites/landing_craftdoor.png" id="4_tk885"]
 [ext_resource type="Texture2D" uid="uid://b2iv73i6g1hcd" path="res://asset_lib/sprites/landing_craftglass.png" id="5_pbvlv"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_53chg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0vqv"]
 resource_local_to_scene = true
 shader = ExtResource("3_r47tk")
 shader_parameter/A1 = 0.3
@@ -101,7 +101,7 @@ texture = ExtResource("2_ld73y")
 texture_mode = 2
 
 [node name="Fake3D" type="Node2D" parent="body"]
-material = SubResource("ShaderMaterial_53chg")
+material = SubResource("ShaderMaterial_a0vqv")
 script = ExtResource("4_c3ug6")
 c = SubResource("Curve_c722f")
 

@@ -32,7 +32,6 @@ text = "0 px/s
 "
 
 [node name="body" type="CharacterBody2D" parent="."]
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 shape = SubResource("CircleShape2D_jgudl")

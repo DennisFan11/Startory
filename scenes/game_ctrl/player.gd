@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _process(delta):
-	_camera()
+	_camera(delta)
 	
 func _physics_process(delta):
 	_player_action()
@@ -33,14 +33,14 @@ func _player_action():
 	
 	
 	
-	
-func _camera():
+var camera_speed = 3
+func _camera(delta):
 	if Input.is_action_just_pressed("zoom_in"):
 		$Camera.zoom *=1.1
 	if Input.is_action_just_pressed("zoom_out"):
 		$Camera.zoom *=0.9
 	var pos = Global.player_position
-	$Camera.position = pos
+	$Camera.position = $Camera.position.lerp(pos,delta*camera_speed)
 	
 	
 

@@ -59,7 +59,7 @@ func _choice_leg():
 	
 
 var charge_dist = 30
-var charged_length = 200
+var charged_length = Global.attack_range
 
 
 

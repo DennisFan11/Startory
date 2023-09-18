@@ -71,7 +71,7 @@ func _physics_process(delta):
 					$"..".leg_out[Global.choice].global_position = $"..".this_out[Global.choice].global_position
 				
 					
-var punch_force = 500
+var punch_force = Global.punch_force
 var 尾端偏移量 = 20
 	
 func _process(delta):

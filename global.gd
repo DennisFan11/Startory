@@ -3,13 +3,14 @@ var ctrl
 var Gctrl
 var map = {}
 var choice = 0
-
+var punch_force = 500 #500
+var attack_range = 600  #200
 var player_view_range = 400 #pix
 var damp:float = 10 #每幀pix
 var speed:float = 12 #每幀pix 12
 var run_speed:float = 16
 var max_speed:float = 100 
-var max_run_speed:float = 200 #150
+var max_run_speed:float = 400 #200
 
 var dirt = preload("res://asset_lib/sprites/dirt.png")
 
